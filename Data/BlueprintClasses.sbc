@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <BlueprintClasses>
+     
+        <Class>
+            <Id>
+                <TypeId>BlueprintClassDefinition</TypeId>
+                <SubtypeId>BioGas</SubtypeId>
+            </Id>
+            <DisplayName>Biogas</DisplayName>
+            <Description>Biogas</Description>
+            <Icon>Textures\GUI\Icons\ore_H2O_ice.dds</Icon>
+            <HighlightIcon>Textures\GUI\Icons\buttons\large_block.dds</HighlightIcon>
+            <FocusIcon>Textures\GUI\Icons\buttons\large_block_focus.dds</FocusIcon>
+            <InputConstraintIcon>Textures\GUI\Icons\filter_ore.dds</InputConstraintIcon>
+            <OutputConstraintIcon>Textures\GUI\Icons\filter_ingot.dds</OutputConstraintIcon>
+        </Class>
+        
+  </BlueprintClasses>
+  <BlueprintClassEntries>
+    <Entry Class="BioGas" BlueprintSubtypeId="BiomassToGas" />
+  </BlueprintClassEntries>
+</Definitions>

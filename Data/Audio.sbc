@@ -1,0 +1,112 @@
+﻿<?xml version="1.0"?>
+<Definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Sounds>
+    <Sound>
+      <Id>
+        <TypeId>MyObjectBuilder_AudioDefinition</TypeId>
+        <SubtypeId>ArcBlockBioreactorProcess</SubtypeId>
+      </Id>
+      <Category>Block</Category>
+      <MaxDistance>20</MaxDistance>
+      <UpdateDistance>35</UpdateDistance>
+      <Volume>1.25</Volume>
+      <Loopable>true</Loopable>
+      <SoundLimit>1</SoundLimit>
+      <Waves>
+        <Wave Type="D3">
+          <Loop>Audio\BioreactorLoop2.wav</Loop>
+        </Wave>
+      </Waves>
+    </Sound>
+
+    <Sound>
+      <Id>
+        <TypeId>MyObjectBuilder_AudioDefinition</TypeId>
+        <SubtypeId>Fart0</SubtypeId>
+      </Id>
+      <Category>BOT</Category>
+      <MaxDistance>20</MaxDistance>
+      <UpdateDistance>35</UpdateDistance>
+      <Volume>1</Volume>
+      <Loopable>false</Loopable>
+      <SoundLimit>3</SoundLimit>
+      <Waves>
+        <Wave Type="D3">
+          <Start>Audio\Fart0.wav</Start>
+        </Wave>
+      </Waves>
+    </Sound>
+    
+    <Sound>
+      <Id>
+        <TypeId>MyObjectBuilder_AudioDefinition</TypeId>
+        <SubtypeId>Fart1</SubtypeId>
+      </Id>
+      <Category>BOT</Category>
+      <MaxDistance>20</MaxDistance>
+      <UpdateDistance>35</UpdateDistance>
+      <Volume>1</Volume>
+      <Loopable>false</Loopable>
+      <SoundLimit>3</SoundLimit>
+      <Waves>
+        <Wave Type="D3">
+          <Start>Audio\Fart1.wav</Start>
+        </Wave>
+      </Waves>
+    </Sound>
+
+    <Sound>
+      <Id>
+        <TypeId>MyObjectBuilder_AudioDefinition</TypeId>
+        <SubtypeId>Fart2</SubtypeId>
+      </Id>
+      <Category>BOT</Category>
+      <MaxDistance>20</MaxDistance>
+      <UpdateDistance>35</UpdateDistance>
+      <Volume>1</Volume>
+      <Loopable>false</Loopable>
+      <SoundLimit>3</SoundLimit>
+      <Waves>
+        <Wave Type="D3">
+          <Start>Audio\Fart2.wav</Start>
+        </Wave>
+      </Waves>
+    </Sound>
+
+    <Sound>
+      <Id>
+        <TypeId>MyObjectBuilder_AudioDefinition</TypeId>
+        <SubtypeId>Fart3</SubtypeId>
+      </Id>
+      <Category>BOT</Category>
+      <MaxDistance>20</MaxDistance>
+      <UpdateDistance>35</UpdateDistance>
+      <Volume>1</Volume>
+      <Loopable>false</Loopable>
+      <SoundLimit>3</SoundLimit>
+      <Waves>
+        <Wave Type="D3">
+          <Start>Audio\Fart3.wav</Start>
+        </Wave>
+      </Waves>
+    </Sound>
+    
+    <Sound>
+      <Id>
+        <TypeId>MyObjectBuilder_AudioDefinition</TypeId>
+        <SubtypeId>Fart4</SubtypeId>
+      </Id>
+      <Category>BOT</Category>
+      <MaxDistance>20</MaxDistance>
+      <UpdateDistance>35</UpdateDistance>
+      <Volume>1</Volume>
+      <Loopable>false</Loopable>
+      <SoundLimit>3</SoundLimit>
+      <Waves>
+        <Wave Type="D3">
+          <Start>Audio\Fart4.wav</Start>
+        </Wave>
+      </Waves>
+    </Sound>
+  </Sounds>
+</Definitions>
