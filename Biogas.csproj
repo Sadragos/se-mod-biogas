@@ -70,94 +70,94 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="ProtoBuf.Net">
-      <HintPath>..\..\Libraries\ProtoBuf.Net.dll</HintPath>
+      <HintPath>..\se-tools\libs\ProtoBuf.Net.dll</HintPath>
     </Reference>
     <Reference Include="ProtoBuf.Net.Core">
-      <HintPath>..\..\Libraries\ProtoBuf.Net.Core.dll</HintPath>
+      <HintPath>..\se-tools\libs\ProtoBuf.Net.Core.dll</HintPath>
     </Reference>
     <Reference Include="Sandbox.Common">
-      <HintPath>..\..\Libraries\Sandbox.Common.dll</HintPath>
+      <HintPath>..\se-tools\libs\Sandbox.Common.dll</HintPath>
     </Reference>
     <Reference Include="Sandbox.Game">
-      <HintPath>..\..\Libraries\Sandbox.Game.dll</HintPath>
+      <HintPath>..\se-tools\libs\Sandbox.Game.dll</HintPath>
     </Reference>
     <Reference Include="Sandbox.Game.XmlSerializers">
-      <HintPath>..\..\Libraries\Sandbox.Game.XmlSerializers.dll</HintPath>
+      <HintPath>..\se-tools\libs\Sandbox.Game.XmlSerializers.dll</HintPath>
     </Reference>
     <Reference Include="Sandbox.Graphics">
-      <HintPath>..\..\Libraries\Sandbox.Graphics.dll</HintPath>
+      <HintPath>..\se-tools\libs\Sandbox.Graphics.dll</HintPath>
     </Reference>
     <Reference Include="Sandbox.RenderDirect">
-      <HintPath>..\..\Libraries\Sandbox.RenderDirect.dll</HintPath>
+      <HintPath>..\se-tools\libs\Sandbox.RenderDirect.dll</HintPath>
     </Reference>
     <Reference Include="SpaceEngineers.Game">
-      <HintPath>..\..\Libraries\SpaceEngineers.Game.dll</HintPath>
+      <HintPath>..\se-tools\libs\SpaceEngineers.Game.dll</HintPath>
     </Reference>
     <Reference Include="SpaceEngineers.ObjectBuilders">
-      <HintPath>..\..\Libraries\SpaceEngineers.ObjectBuilders.dll</HintPath>
+      <HintPath>..\se-tools\libs\SpaceEngineers.ObjectBuilders.dll</HintPath>
     </Reference>
     <Reference Include="SpaceEngineers.ObjectBuilders.XmlSerializers">
-      <HintPath>..\..\Libraries\SpaceEngineers.ObjectBuilders.XmlSerializers.dll</HintPath>
+      <HintPath>..\se-tools\libs\SpaceEngineers.ObjectBuilders.XmlSerializers.dll</HintPath>
     </Reference>
     <Reference Include="VRage">
-      <HintPath>..\..\Libraries\VRage.dll</HintPath>
+      <HintPath>..\se-tools\libs\VRage.dll</HintPath>
     </Reference>
     <Reference Include="VRage.Ansel">
-      <HintPath>..\..\Libraries\VRage.Ansel.dll</HintPath>
+      <HintPath>..\se-tools\libs\VRage.Ansel.dll</HintPath>
     </Reference>
     <Reference Include="VRage.Audio">
-      <HintPath>..\..\Libraries\VRage.Audio.dll</HintPath>
+      <HintPath>..\se-tools\libs\VRage.Audio.dll</HintPath>
     </Reference>
     <Reference Include="VRage.Game">
-      <HintPath>..\..\Libraries\VRage.Game.dll</HintPath>
+      <HintPath>..\se-tools\libs\VRage.Game.dll</HintPath>
     </Reference>
     <Reference Include="VRage.Game.XmlSerializers">
-      <HintPath>..\..\Libraries\VRage.Game.XmlSerializers.dll</HintPath>
+      <HintPath>..\se-tools\libs\VRage.Game.XmlSerializers.dll</HintPath>
     </Reference>
     <Reference Include="VRage.Input">
-      <HintPath>..\..\Libraries\VRage.Input.dll</HintPath>
+      <HintPath>..\se-tools\libs\VRage.Input.dll</HintPath>
     </Reference>
     <Reference Include="VRage.Library">
-      <HintPath>..\..\Libraries\VRage.Library.dll</HintPath>
+      <HintPath>..\se-tools\libs\VRage.Library.dll</HintPath>
     </Reference>
     <Reference Include="VRage.Math">
-      <HintPath>..\..\Libraries\VRage.Math.dll</HintPath>
+      <HintPath>..\se-tools\libs\VRage.Math.dll</HintPath>
     </Reference>
     <Reference Include="VRage.Math.XmlSerializers">
-      <HintPath>..\..\Libraries\VRage.Math.XmlSerializers.dll</HintPath>
+      <HintPath>..\se-tools\libs\VRage.Math.XmlSerializers.dll</HintPath>
     </Reference>
     <Reference Include="VRage.Mod.Io">
-      <HintPath>..\..\Libraries\VRage.Mod.Io.dll</HintPath>
+      <HintPath>..\se-tools\libs\VRage.Mod.Io.dll</HintPath>
     </Reference>
     <Reference Include="VRage.NativeAftermath">
-      <HintPath>..\..\Libraries\VRage.NativeAftermath.dll</HintPath>
+      <HintPath>..\se-tools\libs\VRage.NativeAftermath.dll</HintPath>
     </Reference>
     <Reference Include="VRage.NativeWrapper">
-      <HintPath>..\..\Libraries\VRage.NativeWrapper.dll</HintPath>
+      <HintPath>..\se-tools\libs\VRage.NativeWrapper.dll</HintPath>
     </Reference>
     <Reference Include="VRage.Network">
-      <HintPath>..\..\Libraries\VRage.Network.dll</HintPath>
+      <HintPath>..\se-tools\libs\VRage.Network.dll</HintPath>
     </Reference>
     <Reference Include="VRage.Platform.Windows">
-      <HintPath>..\..\Libraries\VRage.Platform.Windows.dll</HintPath>
+      <HintPath>..\se-tools\libs\VRage.Platform.Windows.dll</HintPath>
     </Reference>
     <Reference Include="VRage.Render">
-      <HintPath>..\..\Libraries\VRage.Render.dll</HintPath>
+      <HintPath>..\se-tools\libs\VRage.Render.dll</HintPath>
     </Reference>
     <Reference Include="VRage.Render11">
-      <HintPath>..\..\Libraries\VRage.Render11.dll</HintPath>
+      <HintPath>..\se-tools\libs\VRage.Render11.dll</HintPath>
     </Reference>
     <Reference Include="VRage.Scripting">
-      <HintPath>..\..\Libraries\VRage.Scripting.dll</HintPath>
+      <HintPath>..\se-tools\libs\VRage.Scripting.dll</HintPath>
     </Reference>
     <Reference Include="VRage.Steam">
-      <HintPath>..\..\Libraries\VRage.Steam.dll</HintPath>
+      <HintPath>..\se-tools\libs\VRage.Steam.dll</HintPath>
     </Reference>
     <Reference Include="VRage.UserInterface">
-      <HintPath>..\..\Libraries\VRage.UserInterface.dll</HintPath>
+      <HintPath>..\se-tools\libs\VRage.UserInterface.dll</HintPath>
     </Reference>
     <Reference Include="VRage.XmlSerializers">
-      <HintPath>..\..\Libraries\VRage.XmlSerializers.dll</HintPath>
+      <HintPath>..\se-tools\libs\VRage.XmlSerializers.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -46,6 +46,7 @@ namespace Biogas
         private void Initialize( )
         {
             AddMessageHandler( );
+            if (!MyAPIGateway.Multiplayer.IsServer) return;
             Config.Load();
             Poop = new Pooper();
         }
@@ -151,7 +152,7 @@ namespace Biogas
         {
             try
             {
-                if ( MyAPIGateway.Session == null )
+                if ( MyAPIGateway.Session == null)
                     return;
 
                 // Run the init
@@ -159,7 +160,10 @@ namespace Biogas
                 {
                     _initialized = true;
                     Initialize( );
-                } else if(interval++ >= 60)
+                    return;
+                }
+
+                if (MyAPIGateway.Multiplayer.IsServer && interval++ >= 60)
                 {
                     interval = 0;
                     UpdateBeforeEverySecond();
