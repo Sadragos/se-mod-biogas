@@ -54,11 +54,30 @@ namespace Biogas
             if (TerminalBlock.IsFunctional)
             {
                 CompostGrid gridData = CompostDataStore.Get(TerminalBlock);
-                if (gridData.LastScan == null || gridData.LastScan < DateTime.Now.AddSeconds(-10))
+                float playerAmount = 0;
+                if (gridData.LastScan == null || gridData.LastScan < DateTime.Now.AddSeconds(-5))
                 {
                     gridData.Refresh();
+
+                    foreach (IMyIdentity identity in gridData.PlayersOnToilet)
+                    {
+                        IMyPlayer player = Utilities.IdentityToPlayer(identity);
+                        if (player == null || player.Character == null || !player.Character.HasInventory) continue;
+                        IMyInventory inven = player.Character.GetInventory();
+
+                        for (int i = inven.ItemCount - 1; i >= 0; i--)
+                        {
+                            VRage.Game.ModAPI.Ingame.MyInventoryItem? item = inven.GetItemAt(i);
+                            if (!item.HasValue) continue;
+                            if (item.Value.Type.ToString().Contains("Ore/Organic"))
+                            {
+                                playerAmount += (float) item.Value.Amount;
+                                inven.RemoveItemsAt(i);
+                            }
+                        }
+                    }
                 }
-                float amount = MyUtils.GetRandomFloat(Config.Instance.OrganicPerOxyenfarmPerSecondMin * gridData.EffectiveFarms * 1.6f, Config.Instance.OrganicPerOxyenfarmPerSecondMax * gridData.EffectiveFarms * 1.6f);
+                float amount = playerAmount + MyUtils.GetRandomFloat(Config.Instance.OrganicPerOxyenfarmPerSecondMin * gridData.EffectiveFarms * 1.6f, Config.Instance.OrganicPerOxyenfarmPerSecondMax * gridData.EffectiveFarms * 1.6f);
                 TerminalBlock.GetInventory().AddItems((VRage.MyFixedPoint)amount, new MyObjectBuilder_Ore() { SubtypeName = "Organic" });
                 TerminalBlock.RefreshCustomInfo();
             }
@@ -69,12 +88,14 @@ namespace Biogas
             try
             {
                 CompostGrid gridData = CompostDataStore.Get(block);
-                stringBuilder.Clear();
-                stringBuilder
+                if (gridData.OxygenFarms > 0)
+                {
+                    stringBuilder
                     .Append("Collecting Organic\n")
                     .Append("- ")
                     .Append(gridData.OxygenFarms)
                     .Append(" working Farms\n");
+                }
                 if (gridData.CropGrowers > 0)
                 {
                     stringBuilder
@@ -94,7 +115,17 @@ namespace Biogas
                     .Append((Config.Instance.OrganicPerOxyenfarmPerSecondMin * gridData.EffectiveFarms * 60).ToString("0.00"))
                     .Append(" - ")
                     .Append((Config.Instance.OrganicPerOxyenfarmPerSecondMax * gridData.EffectiveFarms * 60).ToString("0.00"))
-                    .Append(" Organic / Minute");
+                    .Append(" Organic / Minute from Farms");
+
+                if (gridData.PlayersOnToilet.Count > 0)
+                {
+                    stringBuilder.Append("\n\nEngineers on Toilet\n");
+                    foreach (IMyIdentity id in gridData.PlayersOnToilet)
+                    {
+                        stringBuilder.Append("- ").Append(id.DisplayName).Append("\n");
+                    }
+
+                }
             }
             catch (Exception e)
             {
@@ -132,16 +163,19 @@ namespace Biogas
         public int Composts;
         public int OxygenFarms;
         public int CropGrowers;
+        public List<IMyIdentity> PlayersOnToilet = new List<IMyIdentity>();
         public DateTime LastScan;
         public float EffectiveFarms { get { return (float) (OxygenFarms + CropGrowers) / (float)Math.Max(1, Composts); } }
 
         public void Refresh()
         {
             blocks.Clear();
+            PlayersOnToilet.Clear();
             Composts = 0;
             OxygenFarms = 0;
             CropGrowers = 0;
             Grid.GetBlocks(blocks, b => b.FatBlock != null);
+            LastScan = DateTime.Now;
             foreach(IMySlimBlock block in blocks)
             {
                 if(block.FatBlock is Sandbox.ModAPI.IMyCargoContainer && block.FatBlock.BlockDefinition.SubtypeId.Equals("Compost"))
@@ -155,6 +189,18 @@ namespace Biogas
                 else if (block.FatBlock is Sandbox.ModAPI.IMyAssembler && block.FatBlock.BlockDefinition.SubtypeId.Contains("Crop") && (block.FatBlock as Sandbox.ModAPI.IMyAssembler).IsWorking)
                 {
                     CropGrowers++;
+                }
+                else if (block.FatBlock is Sandbox.ModAPI.IMyCockpit 
+                    && block.FatBlock.DefinitionDisplayNameText.ToLower().Contains("toilet"))
+                {
+                    Sandbox.ModAPI.IMyCockpit cockpit = block.FatBlock as Sandbox.ModAPI.IMyCockpit;
+                    if (!cockpit.IsUnderControl) continue;
+                    long controller = cockpit.ControllerInfo.ControllingIdentityId;
+                    IMyIdentity identity = Utilities.CubeBlockBuiltByToIdentity(controller);
+                    if (identity != null)
+                    {
+                        PlayersOnToilet.Add(identity);
+                    }
                 }
             }
         }

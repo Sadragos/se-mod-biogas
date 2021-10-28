@@ -19,5 +19,6 @@
   </BlueprintClasses>
   <BlueprintClassEntries>
     <Entry Class="BioGas" BlueprintSubtypeId="BiomassToGas" />
+    <Entry Class="BioGas" BlueprintSubtypeId="WasterwaterToGas" />
   </BlueprintClassEntries>
 </Definitions>

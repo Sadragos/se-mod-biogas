@@ -7,11 +7,11 @@
         <SubtypeId>ArcBlockBioreactorProcess</SubtypeId>
       </Id>
       <Category>Block</Category>
-      <MaxDistance>20</MaxDistance>
+      <MaxDistance>15</MaxDistance>
       <UpdateDistance>35</UpdateDistance>
       <Volume>1.25</Volume>
       <Loopable>true</Loopable>
-      <SoundLimit>1</SoundLimit>
+      <SoundLimit>2</SoundLimit>
       <Waves>
         <Wave Type="D3">
           <Loop>Audio\BioreactorLoop2.wav</Loop>
